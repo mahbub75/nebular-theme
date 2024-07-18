@@ -7,35 +7,50 @@
 @use '../../theming' as *;
 
 @mixin nb-tables-smart-table-theme() {
-  angular-smart-table {
+  table{
+    border-collapse: separate!important;
+  }
+  angular2-smart-table {
     table tr th,
     table tr th a {
-      font-family: nb-theme(smart-table-header-font-family);
-      font-size: nb-theme(smart-table-header-font-size);
-      font-weight: nb-theme(smart-table-header-font-weight);
-      line-height: nb-theme(smart-table-header-line-height);
-      color: nb-theme(smart-table-header-fg);
+      font-family: nb-theme(smart-table-header-font-family)!important;
+      font-size: nb-theme(smart-table-header-font-size)!important;
+      font-weight: nb-theme(smart-table-header-font-weight)!important;
+      line-height: nb-theme(smart-table-header-line-height)!important;
+      color: nb-theme(smart-table-header-fg)!important;
     }
 
     table tr td {
-      font-family: nb-theme(smart-table-font-family);
-      font-size: nb-theme(smart-table-font-size);
-      font-weight: nb-theme(smart-table-font-weight);
-      line-height: nb-theme(smart-table-line-height);
-      color: nb-theme(smart-table-fg);
+      font-family: nb-theme(smart-table-font-family)!important;
+      font-size: nb-theme(smart-table-font-size)!important;
+      font-weight: nb-theme(smart-table-font-weight)!important;
+      line-height: nb-theme(smart-table-line-height)!important;
+      color: nb-theme(smart-table-fg)!important;
     }
 
-    table tr th,
     table tr td {
-      position: relative;
-      padding: nb-theme(smart-table-padding);
-      border: 1px solid nb-theme(smart-table-separator);
-      vertical-align: middle;
+      position: relative!important;
+      padding: nb-theme(smart-table-padding)!important;
+      border: 0.5px solid nb-theme(smart-table-separator)!important;
+      vertical-align: middle!important;
+    }
+   table tr th{
+      position: sticky!important;
+      z-index: 1000!important;
+     padding: nb-theme(smart-table-padding)!important;
+     border: 0.5px solid nb-theme(smart-table-separator)!important;
+     vertical-align: middle!important;
+    }
+    thead{
+      border-collapse:separate!important;
+      position: sticky!important;
+      z-index: 1000!important;
+      top: 0;
     }
 
-    table tr.angular-smart-titles {
+    table tr.angular2-smart-titles {
       th {
-        padding: nb-theme(smart-table-padding);
+        padding: nb-theme(smart-table-padding)!important;
         @include nb-ltr(padding-right, 1.75rem);
         @include nb-rtl(padding-left, 1.75rem);
       }
@@ -44,39 +59,39 @@
         &:hover,
         &:active,
         &:visited {
-          color: nb-theme(smart-table-header-fg);
-          text-decoration: none;
+          color: nb-theme(smart-table-header-fg)!important;
+          text-decoration: none!important;
         }
         &.sort.asc,
         &.sort.desc {
-          font-weight: nb-theme(smart-table-header-font-weight);
+          font-weight: nb-theme(smart-table-header-font-weight)!important;
 
           &::after {
-            border-bottom-color: nb-theme(smart-table-fg-secondary);
-            border-width: 0.375rem;
-            position: absolute;
-            margin: 0;
+            border-bottom-color: nb-theme(smart-table-fg-secondary)!important;
+            border-width: 0.375rem!important;
+            position: absolute!important;
+            margin: 0!important;
             @include nb-ltr(right, 0.75rem);
             @include nb-rtl(left, 0.75rem);
-            top: 50%;
-            transform: translate(0, -50%);
+            top: 50%!important;
+            transform: translate(0, -50%)!important;
           }
 
           &.desc::after {
-            transform: translate(0, -50%) rotate(180deg);
+            transform: translate(0, -50%) rotate(180deg)!important;
           }
         }
       }
     }
 
     thead tr {
-      background: nb-theme(smart-table-header-bg);
+      background: nb-theme(smart-table-header-bg)!important;
 
-      &.angular-smart-filters th {
-        padding: nb-theme(smart-table-filter-padding);
+      &.angular2-smart-filters th {
+        padding: nb-theme(smart-table-filter-padding)!important;
 
-        .angular-smart-filter input {
-          line-height: nb-theme(smart-table-line-height);
+        .angular2-smart-filter input {
+          line-height: nb-theme(smart-table-line-height)!important;
         }
       }
     }
@@ -93,116 +108,119 @@
     }
 
     // Actions
-    th.angular-smart-actions-title-add {
+    th.angular2-smart-actions-title-add {
       a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: flex!important;
+        align-items: center!important;
+        justify-content: center!important;
         font-size: 1.75rem !important;
-        padding: nb-theme(smart-table-filter-padding);
-        border-color: nb-theme(smart-table-add-button-border-color);
-        background-color: nb-theme(smart-table-add-button-background-color);
-        color: nb-theme(smart-table-add-button-text-color);
-        border-radius: 0.375rem;
+        padding: nb-theme(smart-table-filter-padding)!important;
+        border-color: nb-theme(smart-table-add-button-border-color)!important;
+        background-color: nb-theme(smart-table-add-button-background-color)!important;
+        color: nb-theme(smart-table-add-button-text-color)!important;
+        border-radius: 0.375rem!important;
 
         &:focus {
-          border-color: nb-theme(smart-table-add-button-focus-border-color);
+          border-color: nb-theme(smart-table-add-button-focus-border-color)!important;
         }
 
         &:hover {
-          text-decoration: none;
-          background-color: nb-theme(smart-table-add-button-hover-background-color);
-          border-color: nb-theme(smart-table-add-button-hover-border-color);
+          text-decoration: none!important;
+          background-color: nb-theme(smart-table-add-button-hover-background-color)!important;
+          border-color: nb-theme(smart-table-add-button-hover-border-color)!important;
         }
 
         &:active {
-          background-color: nb-theme(smart-table-add-button-active-background-color);
-          border-color: nb-theme(smart-table-add-button-active-border-color);
+          background-color: nb-theme(smart-table-add-button-active-background-color)!important;
+          border-color: nb-theme(smart-table-add-button-active-border-color)!important;
         }
       }
     }
 
-    .angular-smart-actions {
-      padding: 0;
-      // fix for 100% height child
-      height: 1px;
+    .angular2-smart-actions {
+      padding: 8px 12px!important;;
 
-      angular-st-tbody-edit-delete,
-      angular-st-tbody-create-cancel,
-      angular-st-actions {
-        display: flex;
-        height: 100%;
+      angular2-st-tbody-edit-delete,
+      angular2-st-tbody-create-cancel,
+      angular2-st-actions {
+        display: flex!important;
+        height: 100%!important;
       }
 
-      a.angular-smart-action {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        width: 100%;
+      a.angular2-smart-action {
+        display: flex!important;
+        align-items: center!important;
+        justify-content: center!important;
+        height: 100%!important;
+        width: 100%!important;
 
         font-size: 2rem !important;
-        color: nb-theme(smart-table-fg-secondary);
+        color: nb-theme(smart-table-fg-secondary)!important;
 
         &:not(:last-child) {
-          border-right: 1px solid nb-theme(smart-table-separator);
+          border-right: 1px solid nb-theme(smart-table-separator)!important;
         }
 
         &:hover {
-          text-decoration: none;
+          text-decoration: none!important;
         }
       }
 
-      .angular-smart-action-add-create:hover,
-      .angular-smart-action-edit-edit:hover,
-      .angular-smart-action-edit-save:hover {
-        color: nb-theme(smart-table-action-add-edit-hover-text-color);
+      .angular2-smart-action-add-create:hover,
+      .angular2-smart-action-edit-edit:hover,
+      .angular2-smart-action-edit-save:hover {
+        color: nb-theme(smart-table-action-add-edit-hover-text-color)!important;
       }
 
-      .angular-smart-action-add-cancel:hover,
-      .angular-smart-action-delete-delete:hover,
-      .angular-smart-action-edit-cancel:hover {
-        color: nb-theme(smart-table-action-cancel-delete-hover-text-color);
+      .angular2-smart-action-add-cancel:hover,
+      .angular2-smart-action-delete-delete:hover,
+      .angular2-smart-action-edit-cancel:hover {
+        color: nb-theme(smart-table-action-cancel-delete-hover-text-color)!important;
       }
     }
 
     // TODO: remove this hack, when it will be possible to identify the whole row in the edit state
     table-cell-edit-mode {
-      display: block;
-      margin: -7.5px -12px;
+      display: block!important;
+      margin: -7.5px -12px!important;
     }
 
-    angular-smart-table-pager {
-      display: block;
+    angular2-smart-table-pager {
+      display: block!important;
+      position: sticky;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: nb-theme(background-basic-color-1)!important;
     }
 
     //Paging
-    nav.angular-smart-pagination-nav {
-      display: flex;
-      justify-content: center;
-      margin-top: 1.25rem;
+    nav.angular2-smart-pagination-nav {
+      display: flex!important;
+      justify-content: center!important;
+      margin-top: 1.25rem!important;
 
-      .angular-smart-pagination {
-        display: flex;
-        padding: 0;
+      .angular2-smart-pagination {
+        display: flex!important;
+        padding: 0!important;
 
         .page-item.disabled .page-link,
         .page-item.disabled .page-link:focus,
         .page-item.disabled .page-link:hover {
-          background-color: nb-theme(smart-table-paging-hover);
-          color: nb-theme(smart-table-paging-disabled-text-color);
+          background-color: nb-theme(smart-table-paging-hover)!important;
+          color: nb-theme(smart-table-paging-disabled-text-color)!important;
         }
       }
 
       .pagination {
-        font-family: nb-theme(smart-table-paging-font-family);
-        font-size: nb-theme(smart-table-paging-font-size);
-        line-height: nb-theme(smart-table-paging-line-height);
-        border: nb-theme(smart-table-paging-border-color) solid nb-theme(smart-table-paging-border-width);
-        border-radius: nb-theme(smart-table-border-radius);
+        font-family: nb-theme(smart-table-paging-font-family)!important;
+        font-size: nb-theme(smart-table-paging-font-size)!important;
+        line-height: nb-theme(smart-table-paging-line-height)!important;
+        border: nb-theme(smart-table-paging-border-color) solid nb-theme(smart-table-paging-border-width)!important;
+        border-radius: nb-theme(smart-table-border-radius)!important;
 
         li {
-          overflow: hidden;
+          overflow: hidden!important;
 
           &:not(:last-child) {
             @include nb-ltr(border-right, 1px solid nb-theme(smart-table-separator));
@@ -211,29 +229,29 @@
 
           a.page-link-prev,
           a.page-link-next {
-            font-size: nb-theme(smart-table-paging-font-size);
-            line-height: nb-theme(smart-table-paging-line-height);
+            font-size: nb-theme(smart-table-paging-font-size)!important;
+            line-height: nb-theme(smart-table-paging-line-height)!important;
           }
 
           a,
           > span {
-            font-size: nb-theme(smart-table-paging-font-size);
-            line-height: nb-theme(smart-table-paging-line-height);
-            background-color: transparent;
-            color: nb-theme(smart-table-paging-page-text-color);
-            padding: 0.75rem 1.25rem;
-            border: none;
+            font-size: nb-theme(smart-table-paging-font-size)!important;
+            line-height: nb-theme(smart-table-paging-line-height)!important;
+            background-color: transparent!important;
+            color: nb-theme(smart-table-paging-page-text-color)!important;
+            padding: 0.75rem 1.25rem!important;
+            border: none!important;
 
             &:focus {
-              border-color: nb-theme(smart-table-paging-page-focus-border-color);
-              color: nb-theme(smart-table-paging-page-focus-text-color);
+              border-color: nb-theme(smart-table-paging-page-focus-border-color)!important;
+              color: nb-theme(smart-table-paging-page-focus-text-color)!important;
             }
 
             &:hover {
-              background-color: nb-theme(smart-table-paging-hover);
-              border-color: nb-theme(smart-table-paging-hover-border-color);
-              color: nb-theme(smart-table-paging-hover-text-color);
-              text-decoration: none;
+              background-color: nb-theme(smart-table-paging-hover)!important;
+              border-color: nb-theme(smart-table-paging-hover-border-color)!important;
+              color: nb-theme(smart-table-paging-hover-text-color)!important;
+              text-decoration: none!important;
             }
           }
 
@@ -241,12 +259,12 @@
             a,
             > span {
               @include nb-ltr() {
-                border-top-left-radius: nb-theme(smart-table-border-radius);
-                border-bottom-left-radius: nb-theme(smart-table-border-radius);
+                border-top-left-radius: nb-theme(smart-table-border-radius)!important;
+                border-bottom-left-radius: nb-theme(smart-table-border-radius)!important;
               }
               @include nb-rtl() {
-                border-top-right-radius: nb-theme(smart-table-border-radius);
-                border-bottom-right-radius: nb-theme(smart-table-border-radius);
+                border-top-right-radius: nb-theme(smart-table-border-radius)!important;
+                border-bottom-right-radius: nb-theme(smart-table-border-radius)!important;
               }
             }
           }
@@ -255,12 +273,12 @@
             a,
             > span {
               @include nb-ltr() {
-                border-top-right-radius: nb-theme(smart-table-border-radius);
-                border-bottom-right-radius: nb-theme(smart-table-border-radius);
+                border-top-right-radius: nb-theme(smart-table-border-radius)!important;
+                border-bottom-right-radius: nb-theme(smart-table-border-radius)!important;
               }
               @include nb-rtl() {
-                border-top-left-radius: nb-theme(smart-table-border-radius);
-                border-bottom-left-radius: nb-theme(smart-table-border-radius);
+                border-top-left-radius: nb-theme(smart-table-border-radius)!important;
+                border-bottom-left-radius: nb-theme(smart-table-border-radius)!important;
               }
             }
           }
@@ -272,8 +290,8 @@
             > span,
             > span:hover,
             > span:focus {
-              color: nb-theme(smart-table-paging-fg-active);
-              background-color: nb-theme(smart-table-paging-bg-active);
+              color: nb-theme(smart-table-paging-fg-active)!important;
+              background-color: nb-theme(smart-table-paging-bg-active)!important;
             }
           }
         }
